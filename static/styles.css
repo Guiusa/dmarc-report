@@ -1,0 +1,159 @@
+body {
+    background-image: url(c3sl.png);
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: lighten;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+body.waiting * {
+  cursor: wait !important ;
+}
+
+/* Controls */
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+#controls label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+#controls input,
+#controls select,
+#controls button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#controls button {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s;
+}
+#controls button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Table container with inner scroll */
+.table-container {
+    max-height: 500px; /* adjust as needed */
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    /* Firefox scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #bbb #f5f5f5;
+}
+
+/* Scrollbar styling for Chrome, Edge, Safari */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.table-container::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+    border: 2px solid #f5f5f5;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 2;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 14px;
+}
+
+.clickable-row {
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+.clickable-row:hover {
+    background-color: #e0e0e0;
+}
+.detail-row td {
+    background-color: #f1f1f1;
+}
+/* Pagination controls */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.pagination .arrow {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+.pagination .arrow:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination input[type="number"] {
+    width: 60px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.half-circles {
+  display: flex;
+  width: 24px;    /* total width of circle */
+  height: 24px;   /* total height of circle */
+}
+
+.left-half,
+.right-half {
+  width: 12px;   /* half of the circle */
+  height: 24px;  /* full height of the circle */
+}
+
+/* Temporary colors for demonstration */
+.left-half {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.right-half {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+

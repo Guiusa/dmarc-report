@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DMARC Report Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>DMARC Report Table</h1>
+    
+    <div id="controls">
+        <!-- Removed the Page input here -->
+        <label>
+            Reports per page:
+            <input type="number" id="per-page-input" value="50" min="1" max="1000">
+        </label>
+
+        <!-- Domain filter -->
+        <label>
+            Domain:
+            <input type="text" id="domain-input">
+        </label>
+
+        <!-- DMARC filter -->
+        <label>
+            Dmarc result:
+            <select id="dmarc-result-op">
+                <option value="l"><</option>
+                <option value="le">≤</option>
+                <option value="g">></option>
+                <option value="ge">≥</option>
+            </select>
+            <input type="number" id="dmarc-result-value" min="0" max="2">
+        </label>
+
+        <!-- Min and Max date filters -->
+        <label>
+            Min date:
+            <select id="min-date-op">
+                <option value="l"><</option>
+                <option value="le">≤</option>
+                <option value="g">></option>
+                <option value="ge">≥</option>
+            </select>
+            <input type="date" id="min-date-value">
+        </label>
+        <label>
+            Max date:
+            <select id="max-date-op">
+                <option value="l"><</option>
+                <option value="le">≤</option>
+                <option value="g">></option>
+                <option value="ge">≥</option>
+            </select>
+            <input type="date" id="max-date-value">
+        </label>
+
+        <!-- Order -->
+        <label>
+            Order by:
+            <select id="order-field">
+                <option value="mindate">min_date</option>
+                <option value="maxdate">max_date</option>
+            </select>
+            <select id="order-orientation">
+                <option value="">asc</option>
+                <option value="-">desc</option>
+            </select>
+        </label>
+
+        <!-- Load button -->
+        <button id="load-btn">Load</button>
+    </div>
+    
+    <div class="table-container">
+        <table id="report-table">
+            <thead>
+                <tr>
+                    <th>Results</th>
+                    <th>Min Date</th>
+                    <th>Max Date</th>
+                    <th>Domain</th>
+                    <th>Org</th>
+                    <th>Messages</th>
+                    <th>Report ID</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Pagination controls -->
+    <div class="pagination">
+        <button id="prev-page" class="arrow">◀</button>
+        <input type="number" id="page-input" value="1" min="1">
+        <button id="next-page" class="arrow">▶</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
